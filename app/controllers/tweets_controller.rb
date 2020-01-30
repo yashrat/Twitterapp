@@ -9,11 +9,10 @@ class TweetsController < ActionController::Base
 	end
 
 	def create
-		byebug
 		@tweet = Tweet.new(tweet_params)
 		respond_to do |format|
 			if @tweet.save
-      	format.html { redirect_to tweets_path, notice: 'followed successfully.' }
+      	format.html { redirect_to tweets_path, notice: 'Created Tweet Succesfully' }
       else
       	format.html { render action: "new" }
       end
