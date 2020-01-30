@@ -1,0 +1,19 @@
+<h2>Create Tweet</h2>
+
+<%= form_for(@tweet, url: tweets_path) do |f| %>
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </div>
+
+  <%= f.hidden_field :user_id, value:current_user.id %>
+  
+  <div class="actions">
+    <%= f.submit "Post" %>
+  </div>
+<% end %>

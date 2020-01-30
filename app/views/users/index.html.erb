@@ -1,0 +1,17 @@
+<h1>Listing Users</h1>
+ 
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th></th>
+  </tr>
+ 
+  <% @users.where.not(id:current_user.id).each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= link_to "follow", create_follower_user_path(current_user, follwed_id: user.id) %></td>
+    </tr>
+  <% end %>
+</table>

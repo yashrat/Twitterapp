@@ -1,0 +1,18 @@
+<h1>Listing Tweets</h1>
+
+<%= link_to 'Create_Tweet', new_tweet_path  %>
+<table>
+  <tr>
+    <th>Subject</th>
+    <th style="margin-left: 20px">Comment</th>
+    <th style="margin-left: 20px">Author</th>
+  </tr>
+ 
+  <% @tweets.each do |tweet| %>
+    <tr>
+      <td><%= tweet.subject %></td>
+      <td><%= tweet.comment %></td>
+      <td><%= tweet.author.first_name %></td>
+    </tr>
+  <% end %>
+</table>
